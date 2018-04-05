@@ -93,6 +93,7 @@ class CompBookRenderer : IComponent {
         }
 
         if (currentSection != "index" && mouse in Arrow.INDEX.collisionBox.offset(gui.pos)) {
+            // how to activate this? could not find out yet
             openPage("index", 0)
         }
 

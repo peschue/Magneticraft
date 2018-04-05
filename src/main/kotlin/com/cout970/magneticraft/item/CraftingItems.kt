@@ -45,6 +45,7 @@ object CraftingItems : IItemMaker {
         guideBook = builder.withName("guide_book").copy {
             onItemRightClick = {
                 if (it.playerIn.isSneaking || it.worldIn.isClient) {
+                  // PS: let's try to activate that code, is this some kind of hidden reset to go to the TOC of the guide book?
                     it.default
                 } else {
                     val pos = it.playerIn.position
