@@ -107,7 +107,6 @@ fun parseChildren(str: String): List<MdTag> {
         }
 
         if (line.contains(link)) {
-            // ignore ".md" endings here?
             val match = link.find(line)!!
             val preText = line.substring(0 until match.range.start)
             val text = match.groupValues[1]

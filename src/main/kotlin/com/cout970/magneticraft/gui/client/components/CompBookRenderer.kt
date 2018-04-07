@@ -104,6 +104,7 @@ class CompBookRenderer : IComponent {
             }
             if (link != null) {
                 if (link.linkSection in book.sections)
+                    // we could ignore the ".md" here (?)
                     openPage(link.linkSection, link.linkPage)
             }
         }

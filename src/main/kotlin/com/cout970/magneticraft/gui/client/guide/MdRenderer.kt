@@ -89,7 +89,10 @@ object MdRenderer {
         } else 0
 
         val urlWithoutPage = if (separator != -1) {
-            url.substringBeforeLast('#')
+            // we remove the ".md" suffix of the page Url because
+            // * with .md suffix, in github we can follow the links in the formatted Markdown
+            // * in game we register resources without ".md" suffixes (see Chapters.kt)
+            url.substringBeforeLast('#').removeSuffix(".md")
         } else url
 
         val slashIndex = urlWithoutPage.indexOfLast { it == '/' }
