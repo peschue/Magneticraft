@@ -93,7 +93,6 @@ class CompBookRenderer : IComponent {
         }
 
         if (currentSection != "index" && mouse in Arrow.INDEX.collisionBox.offset(gui.pos)) {
-            // how to activate this? could not find out yet
             openPage("index", 0)
         }
 
@@ -103,6 +102,7 @@ class CompBookRenderer : IComponent {
                 link = checkLinkClick(pages[pageIndex + 1], mouse, vec2Of(pageOffset, 0) + gui.pos + textOffset)
             }
             if (link != null) {
+                println("linkSection is "+link.linkSection) 
                 if (link.linkSection in book.sections)
                     // we could ignore the ".md" here (?)
                     openPage(link.linkSection, link.linkPage)
